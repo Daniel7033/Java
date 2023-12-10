@@ -28,9 +28,9 @@ public class CiudadService implements ICiudadService{
 	}
 
 	@Override
-	public Ciudad save(Ciudad cliente) {
-		cliente.setFechaCreacion(LocalDateTime.now());
-		return repository.save(cliente);
+	public Ciudad save(Ciudad ciudad) {
+		ciudad.setFechaCreacion(LocalDateTime.now());
+		return repository.save(ciudad);
 	}
 
 	@Override

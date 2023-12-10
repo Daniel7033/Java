@@ -44,6 +44,7 @@ public class PaisService implements IPaisService{
 					Pais updatePais = op.get();					
 					updatePais.setCodigo(pais.getCodigo());
 					updatePais.setNombre(pais.getNombre());
+					updatePais.setContinenteId(pais.getContinenteId());
 					updatePais.setEstado(pais.getEstado());
 					updatePais.setFechaModificacion(LocalDateTime.now());
 					

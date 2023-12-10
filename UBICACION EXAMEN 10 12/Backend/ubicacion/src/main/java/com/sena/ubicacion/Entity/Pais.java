@@ -2,6 +2,7 @@ package com.sena.ubicacion.Entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -23,8 +24,9 @@ public class Pais extends ABaseEntity{
 	@Column(name = "nombre", length = 50, nullable = false)
 	private String nombre;
 	
-	 @ManyToOne
-    @JoinColumn(name = "continente_id")
+	@ManyToOne(fetch = FetchType.EAGER, optional = false)
+	@JoinColumn(name = "continente_id", nullable = false)
+	private Continente continenteId;
 
 	public Long getId() {
 		return id;
@@ -50,6 +52,12 @@ public class Pais extends ABaseEntity{
 		this.nombre = nombre;
 	}
 
+	public Continente getContinenteId(){
+		return continenteId;
+	}
 
+	public void setContinenteId(Continente continenteId){
+		this.continenteId = continenteId;
+	}
 }
 

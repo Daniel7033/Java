@@ -18,7 +18,7 @@ import com.sena.ubicacion.IService.IDepartamentoService;
 
 @CrossOrigin(originPatterns = "*")
 @RestController
-@RequestMapping("v1/api/Departamento")
+@RequestMapping("v1/api/departamento")
 public class DepartamentoController {
 	@Autowired
 	private IDepartamentoService service;

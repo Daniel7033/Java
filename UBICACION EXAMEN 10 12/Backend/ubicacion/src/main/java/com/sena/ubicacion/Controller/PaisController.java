@@ -18,7 +18,7 @@ import com.sena.ubicacion.IService.IPaisService;
 
 @CrossOrigin(originPatterns = "*")
 @RestController
-@RequestMapping("v1/api/Pais")
+@RequestMapping("v1/api/pais")
 public class PaisController {
 	@Autowired
 	private IPaisService service;

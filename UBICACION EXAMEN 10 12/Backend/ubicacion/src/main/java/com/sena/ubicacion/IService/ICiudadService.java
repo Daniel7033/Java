@@ -26,7 +26,7 @@ public interface ICiudadService {
 	/**
 	 * Método para modificar
 	 * **/
-	public void update(Ciudad cliente, Long id);
+	public void update(Ciudad ciudad, Long id);
 	
 	/**
 	 * Método para eliminar
