@@ -8,7 +8,7 @@ function save() {
   
     var jsonData = JSON.stringify(data);
     $.ajax({
-      url: 'http://localhost:9000/v2/api/continente',
+      url: 'http://localhost:9000/v1/api/continente',
       method: 'POST',
       dataType: 'json',
       contentType: 'application/json',
@@ -34,7 +34,7 @@ function save() {
     var id = $("#id").val();
     var jsonData = JSON.stringify(data);
     $.ajax({
-      url: 'http://localhost:9000/v2/api/continente/' + id,
+      url: 'http://localhost:9000/v1/api/continente/' + id,
       data: jsonData,
       method: "PUT",
       headers: {
@@ -54,7 +54,7 @@ function save() {
   
   function loadData() {
     $.ajax({
-      url: 'http://localhost:9000/v2/api/continente',
+      url: 'http://localhost:9000/v1/api/continente',
       method: 'GET',
       dataType: 'json',
       success: function (data) {
@@ -82,7 +82,7 @@ function save() {
   
   function findById(id) {
     $.ajax({
-      url: 'http://localhost:9000/v2/api/continente/' + id,
+      url: 'http://localhost:9000/v1/api/continente/' + id,
       method: 'GET',
       dataType: 'json',
       success: function (data) {
@@ -105,7 +105,7 @@ function save() {
   
   function deleteById(id) {
     $.ajax({
-      url: 'http://localhost:9000/v2/api/continente/' + id,
+      url: 'http://localhost:9000/v1/api/continente/' + id,
       method: "delete",
       headers: {
         "Content-Type": "application/json"
