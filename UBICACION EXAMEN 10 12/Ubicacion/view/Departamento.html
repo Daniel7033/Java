@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Departamento</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='../asset/css/global.css'>
+    <script src='../js/Ubicacion.js'></script>
+
+    <!-- Librerias -->
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/litera/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- ajax jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="inputData">
+            <form>
+                <fieldset>
+                    <legend>Departamento</legend>
+                        <label class="col-sm-2 col-form-label">id</label>
+                        <div class="col-sm-10">
+                        </div>
+
+                        <label class="col-sm-2 col-form-label">Codigo</label>
+                        <div class="col-sm-10">
+                        </div>
+
+                        <label class="col-sm-2 col-form-label">Nombre</label>
+                        <div class="col-sm-10">
+                        </div>
+        </br>
+            <table class="table table-hover">
+                <thead>
+                    <tr class="table-dark">
+                        <th>id</th>
+                        <th>Codigo</th>
+                        <th>Nombre</th>
+                    </tr>
+                </thead>
+                <tbody id="resultData">
+                     <!-- Aquí llegan los datos de la bd -->                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+   loadData();
+</script>
