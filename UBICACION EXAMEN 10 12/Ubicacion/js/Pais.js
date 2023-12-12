@@ -26,7 +26,7 @@
     var data = {
         'codigo': $('#codigo').val(),
         'nombre': $('#nombre').val(),
-        'continente_id': parseInt($('#continente_id').val()),
+        'continente_id': JSON.stringify($('#continente_id').val()),
         'estado': parseInt($('#estado').val()),
     };
 
@@ -54,7 +54,7 @@
     var data = {
       'codigo': $('#codigo').val(),
       'nombre': $('#nombre').val(),
-      'continente_id': parseInt($('#continente_id').val()),
+      'continente_id': JSON.stringify($('#continente_id').val()),
       'estado': parseInt($('#estado').val()),
     };
     var id = $("#id").val();
