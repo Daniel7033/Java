@@ -41,13 +41,14 @@ public class CiudadService implements ICiudadService{
 				if(op.isEmpty()){
 					System.out.print("Registro no existe.");
 				}else {
-					Ciudad updateCliente = op.get();					
-					updateCliente.setCodigo(ciudad.getCodigo());
-					updateCliente.setNombre(ciudad.getNombre());
-					updateCliente.setEstado(ciudad.getEstado());
-					updateCliente.setFechaModificacion(LocalDateTime.now());
+					Ciudad updateCiudad = op.get();					
+					updateCiudad.setCodigo(ciudad.getCodigo());
+					updateCiudad.setNombre(ciudad.getNombre());
+					updateCiudad.setDepartamentoId(ciudad.getDepartamentoId());
+					updateCiudad.setEstado(ciudad.getEstado());
+					updateCiudad.setFechaModificacion(LocalDateTime.now());
 					
-					repository.save(updateCliente);
+					repository.save(updateCiudad);
 				}
 	}
 	

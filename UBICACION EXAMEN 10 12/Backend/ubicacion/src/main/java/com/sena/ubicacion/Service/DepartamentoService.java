@@ -45,6 +45,7 @@ public class DepartamentoService implements IDepartamentoService{
 					Departamento updateDepartamento = op.get();					
 					updateDepartamento.setCodigo(departamento.getCodigo());
 					updateDepartamento.setNombre(departamento.getNombre());
+					updateDepartamento.setPaisId(departamento.getPaisId());
 					updateDepartamento.setEstado(departamento.getEstado());
 					updateDepartamento.setFechaModificacion(LocalDateTime.now());
 					

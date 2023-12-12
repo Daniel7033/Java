@@ -1,30 +1,54 @@
-function save() {
-    // Construir el objeto data
-    var data = {
-      'codigo': $('#codigo').val(),
-      'nombre': $('#nombre').val(),
-      'continente_id': parseInt($('#continente_id').val()),
-      'estado': parseInt($('#estado').val()),
-    };
-  
-    var jsonData = JSON.stringify(data);
+  function getDocuments() {
+    // Realizar la solicitud AJAX
     $.ajax({
-      url: 'http://localhost:9000/v1/api/pais',
-      method: 'POST',
-      dataType: 'json',
-      contentType: 'application/json',
-      data: jsonData,
-      success: function (data) {
-        alert("Registro agregado con éxito");
-        loadData();
-        clearData();
-      },
-      error: function (error) {
-        console.error('Error en la solicitud:', error);
-      }
+        url: 'http://localhost:9000/v1/api/continente',
+        method: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            // Limpiar el selector antes de agregar nuevas opciones
+            $('#continente_id').empty();
+
+            // Crear opciones para el selector
+            for (var i = 0; i < data.length; i++) {
+                var option = document.createElement('option');
+                option.value = data[i].id;
+                option.text = data[i].id + ' - ' + data[i].nombre;
+                $('#continente_id').append(option);
+            }
+        },
+        error: function (error) {
+            console.error('Error al obtener los datos:', error);
+        }
     });
   }
-  
+  function save() {
+    // Construir el objeto data
+    var data = {
+        'codigo': $('#codigo').val(),
+        'nombre': $('#nombre').val(),
+        'continente_id': parseInt($('#continente_id').val()),
+        'estado': parseInt($('#estado').val()),
+    };
+
+    // Enviar los datos a la API
+    var jsonData = JSON.stringify(data);
+    $.ajax({
+        url: 'http://localhost:9000/v1/api/pais',
+        method: 'POST',
+        dataType: 'json',
+        contentType: 'application/json',
+        data: jsonData,
+        success: function (data) {
+            alert("Registro agregado con éxito");
+            loadData();
+            clearData();
+        },
+        error: function (error) {
+            console.error('Error en la solicitud:', error);
+        }
+    });
+}
+    
   function update() {
     // Construir el objeto data
     var data = {
@@ -68,7 +92,7 @@ function save() {
                   <td>`+ item.codigo + `</td>
                   <td>`+ item.nombre + `</td>
                   <td>`+ item.continente_id + `</td>
-                  <td>`+ (item.estado == true ? 'Activio' : 'Inactivo') + `</td>
+                  <td>`+ (item.estado == true ? 'Activo' : 'Inactivo') + `</td>
                   <th><img src="../asset/icon/pencil-square.svg" alt="" onclick="findById(`+ item.id + `)"></th>
                   <th><img src="../asset/icon/trash3.svg" alt="" onclick="deleteById(`+ item.id + `)"></th>
               </tr>`;

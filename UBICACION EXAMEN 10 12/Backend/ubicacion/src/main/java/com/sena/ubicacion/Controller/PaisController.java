@@ -32,15 +32,19 @@ public class PaisController {
 	public Optional<Pais> findById(@PathVariable Long id) {
 		return service.findById(id);
 	}
-	
+
 	@PostMapping
 	public Pais save(@RequestBody Pais pais) {
-		return service.save(pais);
+		try {
+			return service.save(pais);
+		} catch (Exception e) {
+			return null;
+		}
 	}
 	
 	@PutMapping("{id}")
-	public void save(@RequestBody Pais Pais, @PathVariable  Long id) {
-		service.update(Pais, id);
+	public void save(@RequestBody Pais pais, @PathVariable  Long id) {
+		service.update(pais, id);
 	}
 	
 	@PutMapping("deleted-at/{id}")

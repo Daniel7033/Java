@@ -37,8 +37,9 @@
                     <label class="col-sm-2 col-form-label">Continente</label>
                     <div class="col-sm-10">
                         <!-- La llave  foraneo-->
-                        <input type="text" class="form-control" name="continente_id" id="continente_id" value=""
-                            placeholder="Ingrese el id del continente">
+                        <select id="continente_id" name="continente_id" class="form-select" aria-label="Continente">
+                            <option selected>Ejemplo</option>
+                        </select>
                     </div>
 
                     <label class="col-sm-2 col-form-label">Estado</label>
@@ -80,4 +81,5 @@
 </html>
 <script>
     loadData();
+    getDocuments();
 </script>
