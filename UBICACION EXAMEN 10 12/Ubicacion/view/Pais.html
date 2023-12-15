@@ -36,10 +36,12 @@
 
                     <label class="col-sm-2 col-form-label">Continente</label>
                     <div class="col-sm-10">
-                        <!-- La llave  foraneo-->
-                        <select id="continente_id" name="continente_id" class="form-select" aria-label="Continente">
-                            <option selected></option>
+                        
+                        <select class="form-select" id="continente_id">
+                            <option value="" selected disabled>--Seleccione--</option>
+                            
                         </select>
+                        <br>
                     </div>
 
                     <label class="col-sm-2 col-form-label">Estado</label>
@@ -57,6 +59,7 @@
         <div id="buttonData">
             <br>
             <button name="btnAgregar" onclick="save()" class="btn btn-success">Agregar</button>
+    
         </div>
         <div id="outputData">
 
@@ -81,5 +84,5 @@
 </html>
 <script>
     loadData();
-    getDocuments();
+    loadContinente();
 </script>

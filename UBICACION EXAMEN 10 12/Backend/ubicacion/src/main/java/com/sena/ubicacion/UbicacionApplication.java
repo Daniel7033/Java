@@ -9,5 +9,6 @@ public class UbicacionApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(UbicacionApplication.class, args);
 	}
+	
 
 }

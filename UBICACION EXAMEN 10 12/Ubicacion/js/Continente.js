@@ -65,7 +65,7 @@ function save() {
           html += `<tr>
                   <td>`+ item.codigo + `</td>
                   <td>`+ item.nombre + `</td>
-                  <td>`+ (item.estado == true ? 'Activio' : 'Inactivo') + `</td>
+                  <td>`+ (item.estado == true ? 'Activo' : 'Inactivo') + `</td>
                   <th><img src="../asset/icon/pencil-square.svg" alt="" onclick="findById(`+ item.id + `)"></th>
                   <th><img src="../asset/icon/trash3.svg" alt="" onclick="deleteById(`+ item.id + `)"></th>
               </tr>`;
